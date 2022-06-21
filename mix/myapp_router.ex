@@ -29,8 +29,9 @@ defmodule MyApp.Router do
     put "/pages/:page", PageController, :update
   end
 
-  localize "fr" do
-    live "/columns/:page", PageController
+  localize ["en", "fr"] do
+    live "/columns/:page", ColumnLive
+    live "/live_page", PageLive
   end
 
   # Unlocalized route with translatable path

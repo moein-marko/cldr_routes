@@ -332,7 +332,8 @@ defmodule Cldr.Route.LocalizedHelpers do
     trailing_slash? = route.trailing_slash?
 
     {bins, vars} = :lists.unzip(exprs.binding)
-    segs = expand_segments(exprs.path, route.assigns)
+    assigns = get_assigns(route)
+    segs = expand_segments(exprs.path, assigns)
 
     quote do
       defhelper.(
@@ -419,7 +420,13 @@ defmodule Cldr.Route.LocalizedHelpers do
     end
   end
 
-  def localize(string, _assigns) do
-    string
-  end
+  def localize(string, _assigns),do: string
+
+  def get_assigns(%{assigns: %{cldr_locale: cldr_locale} = assigns}) when is_struct(cldr_locale),
+    do: assigns
+
+  def get_assigns(%{private: %{cldr_locale: cldr_locale} = private}) when is_struct(cldr_locale),
+    do: private
+
+  def get_assigns(_), do: %{}
 end

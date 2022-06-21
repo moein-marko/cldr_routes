@@ -73,5 +73,15 @@ defmodule Cldr.Route.Test do
       Gettext.put_locale MyAppWeb.Gettext, "fr"
       assert MyApp.Router.LocalizedHelpers.not_localized_path(%Plug.Conn{}, :show, 1) == "/not_localized/1"
     end
+
+    test "live localized path helper" do
+      Gettext.put_locale MyAppWeb.Gettext, "en"
+
+      assert MyApp.Router.LocalizedHelpers.live_path(%Plug.Conn{}, ColumnLive, 1) == "/columns/1"
+
+      Gettext.put_locale MyAppWeb.Gettext, "fr"
+
+      assert MyApp.Router.LocalizedHelpers.live_path(%Plug.Conn{}, PageLive) == "/live_page_fr"
+    end
   end
 end

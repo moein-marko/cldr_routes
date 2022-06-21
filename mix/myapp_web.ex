@@ -94,8 +94,6 @@ defmodule MyAppWeb do
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
-
-      import MyAppWeb.ErrorHelpers
       import MyAppWeb.Gettext
       alias MyAppWeb.Router.Helpers, as: Routes
     end

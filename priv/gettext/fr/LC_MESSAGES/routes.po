@@ -22,6 +22,12 @@ msgstr "chapters_fr"
 msgid "comments"
 msgstr "comments_fr"
 
+msgid "columns"
+msgstr "columns_fr"
+
+msgid "live_page"
+msgstr "live_page_fr"
+
 # Translation for a route that should
 # never be translated
 msgid "not_localized"
