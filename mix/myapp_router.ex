@@ -29,7 +29,7 @@ defmodule MyApp.Router do
     put "/pages/:page", PageController, :update
   end
 
-  localize ["en", "fr"] do
+  localize do
     live "/columns/:page", ColumnLive
     live "/live_page", PageLive
   end

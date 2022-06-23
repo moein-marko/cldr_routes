@@ -237,7 +237,7 @@ defmodule Cldr.Route do
 
   defmacro localize([do: route]) do
     cldr_backend = Module.get_attribute(__CALLER__.module, :_cldr_backend)
-    cldr_locale_names = cldr_backend.known_locale_names()
+    cldr_locale_names = get_locales_names(cldr_backend)
 
     quote do
       localize(unquote(cldr_locale_names), [do: unquote(route)])
@@ -471,4 +471,11 @@ defmodule Cldr.Route do
     {verb, meta, [path, controller, action]}
   end
 
+  defp get_locales_names(cldr_backend)do
+    default = cldr_backend.default_locale().cldr_locale_name
+
+    cldr_backend.known_locale_names()
+    |>List.delete(default)
+    |>List.insert_at(0 ,default)
+  end
 end
