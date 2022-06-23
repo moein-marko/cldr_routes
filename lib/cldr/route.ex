@@ -475,7 +475,7 @@ defmodule Cldr.Route do
     default = cldr_backend.default_locale().cldr_locale_name
 
     cldr_backend.known_locale_names()
-    |>List.delete(default)
-    |>List.insert_at(0 ,default)
+    |> List.delete(default)
+    |> List.insert_at(0 ,default)
   end
 end

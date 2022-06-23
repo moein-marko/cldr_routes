@@ -1,0 +1,34 @@
+msgid "pages"
+msgstr "pages_de"
+
+msgid "users"
+msgstr "users_de"
+
+msgid "faces"
+msgstr "faces_de"
+
+msgid "eyes"
+msgstr "eyes_de"
+
+msgid "edit"
+msgstr "edit_de"
+
+msgid "objects"
+msgstr "objects_de"
+
+msgid "chapters"
+msgstr "chapters_de"
+
+msgid "comments"
+msgstr "comments_de"
+
+msgid "columns"
+msgstr "columns_de"
+
+msgid "live_page"
+msgstr "live_page_de"
+
+# Translation for a route that should
+# never be translated
+msgid "not_localized"
+msgstr "not_localized_de"
